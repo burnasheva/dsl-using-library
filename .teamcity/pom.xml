@@ -27,6 +27,13 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
+    <repository>
+      <id>nexus-repository</id>
+      <url>http://nexus-test.labs.intellij.net:8081/repository/private-maven-registry</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
   </repositories>
 
   <pluginRepositories>
@@ -98,6 +105,12 @@
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-script-runtime</artifactId>
       <version>${kotlin.version}</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.example</groupId>
+      <artifactId>simple-maven-library</artifactId>
+      <version>0.0.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
