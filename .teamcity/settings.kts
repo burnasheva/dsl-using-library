@@ -31,6 +31,7 @@ version = "2019.2"
 project {
 
     subProject(NetCli)
+
 }
 
 
