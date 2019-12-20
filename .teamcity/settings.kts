@@ -36,6 +36,7 @@ project {
 
 object NetCli : Project({
     val projectName = DslContext.getParameter("project.name.dotnet", ".NET CLI")
+
     name = DslLibrary.format(projectName)
 
     buildType(NetCli_RunTests)
