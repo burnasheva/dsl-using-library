@@ -43,7 +43,7 @@ object NetCli : Project({
 })
 
 object NetCli_RunTests : BuildType({
-    name = "run tests"
+    name = DslLibrary.toUpperCase("run tests")
 
     vcs {
         root(AbsoluteId("DotnetCore30"))
