@@ -3,6 +3,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dotnetBuild
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dotnetRestore
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.dotnetTest
 import com.test.DslLibrary
+import com.test.OurBuildType
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -34,7 +35,6 @@ project {
 
 }
 
-
 object NetCli : Project({
     val projectName = DslContext.getParameter("project.name.dotnet", ".NET CLI")
 
@@ -43,9 +43,8 @@ object NetCli : Project({
     buildType(NetCli_RunTests)
 })
 
-object NetCli_RunTests : BuildType({
+object NetCli_RunTests : OurBuildType({
     name = DslLibrary.toUpperCase("run tests")
-
 
     vcs {
         root(AbsoluteId("DotnetCore30"))
